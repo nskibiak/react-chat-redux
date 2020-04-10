@@ -8,7 +8,14 @@ function App() {
       <div className="MessageList">
         <div className="ChannelTitle"></div>
         <div className="Messages"></div>
-        <div className="MessageForm"></div>
+        <div className="MessageForm">
+          <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+              <input type="message" class="form-control" id="inputMessage"></input>
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
