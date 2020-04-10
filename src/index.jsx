@@ -10,5 +10,5 @@ const initialState = {
   messageList: [],
   channelList: [],
   selectedChannel: null,
-  currentUsername: null
+  currentUsername: window.prompt("Please enter your name")
 }
