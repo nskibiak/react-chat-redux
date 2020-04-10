@@ -7,12 +7,13 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
 import MessagesReducer from './reducers/messages_reducer';
+import ChannelsReducer from './reducers/channels_reducer';
 
 import App from './containers/App';
 
 const reducers = combineReducers({
   messages: MessagesReducer,
-  channels: [ 'general', 'react', 'paris' ],
+  channels: ChannelsReducer,
   currentUser: prompt("Please enter a username") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
   selectedChannel: 'general'
 });
