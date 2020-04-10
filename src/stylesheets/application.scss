@@ -39,3 +39,17 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+.ChannelTitle {
+  border-bottom: 1px solid #DBDBDB;
+  height: 150px
+}
+
+.Messages {
+  height: 100%;
+}
+
+.MessageForm {
+  border-top: 1px solid #DBDBDB;
+  height: 150px
+}
