@@ -20,16 +20,26 @@ code {
   display: flex;
 }
 
+.LogoHolder{
+  width: 5vw;
+  display: flex;
+  padding-top: 15px;
+  justify-content: center;
+}
+
 #logo {
   width: 50px;
   height: 50px;
-  padding: 10px;
 }
 
 .ChannelList {
   height: 100vh;
   width: 25vw;
   background-color: #F4F4F4;
+  padding: 25px;
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 .MessageList {
@@ -42,7 +52,13 @@ code {
 
 .ChannelTitle {
   border-bottom: 1px solid #DBDBDB;
-  height: 150px
+  height: 150px;
+  padding-left: 40px;
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
 }
 
 .Messages {
@@ -52,5 +68,15 @@ code {
 .MessageForm {
   display: flex;
   border-top: 1px solid #DBDBDB;
-  height: 150px
+  height: 150px;
+  justify-content: center;
+}
+
+#inputMessage {
+  width: 800px;
+  border-radius: none;
+}
+
+#messageButton {
+  width: 100px;
 }
