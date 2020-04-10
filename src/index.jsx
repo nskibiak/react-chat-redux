@@ -1,14 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './stylesheets/application.scss';
-import App from './containers/App';
 import 'bootstrap/dist/css/bootstrap.css';
 
-ReactDOM.render(<App />,document.getElementById('root'));
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
 
-const initialState = {
-  messages: [],
+import MessagesReducer from './reducers/messages_reducer';
+
+import App from './containers/App';
+
+const reducers = combineReducers({
+  messages: MessagesReducer,
   channels: [ 'general', 'react', 'paris' ],
   currentUser: prompt("Please enter a username") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
   selectedChannel: 'general'
-};
+});
+
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+
+
+// const initialState = {
+//   messages: [],
+//   channels: [ 'general', 'react', 'paris' ],
+//   currentUser: prompt("Please enter a username") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
+//   selectedChannel: 'general'
+// };
