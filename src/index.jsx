@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 ReactDOM.render(<App />,document.getElementById('root'));
 
 const initialState = {
-  messageList: [],
-  channelList: [],
-  selectedChannel: null,
-  currentUsername: window.prompt("Please enter your name")
-}
+  messages: [],
+  channels: [ 'general', 'react', 'paris' ],
+  currentUser: prompt("Please enter a username") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
+  selectedChannel: 'general'
+};
