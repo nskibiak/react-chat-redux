@@ -5,3 +5,10 @@ import App from './containers/App';
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(<App />,document.getElementById('root'));
+
+const initialState = {
+  messageList: [],
+  channelList: [],
+  selectedChannel: null,
+  currentUsername: null
+}
