@@ -68,7 +68,7 @@ code {
 }
 
 .Message {
-  height: 100px;
+  height: 80px;
 }
 
 .topLine {
@@ -84,6 +84,7 @@ code {
 .timeStamp {
   font-size: .8em;
   color: #929292;
+  margin-bottom: 1px;
 }
 
 .messageContent {
@@ -99,7 +100,7 @@ code {
 }
 
 #inputMessage {
-  width: 800px;
+  width: 50vw;
   border-radius: 0 !important;
 }
 
