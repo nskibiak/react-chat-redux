@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { logger } from 'redux-logger';
 
 import MessagesReducer from './reducers/messages_reducer';
 import ChannelsReducer from './reducers/channels_reducer';
@@ -20,8 +21,10 @@ const reducers = combineReducers({
   selectedChannel: SelectedChannelReducer
 });
 
+const middlewares = applyMiddleware(logger);
+
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
+  <Provider store={createStore(reducers, {}, middlewares)}>
     <App />
   </Provider>,
   document.getElementById('root')
