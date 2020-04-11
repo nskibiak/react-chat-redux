@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { fetchMessages } from '../actions'
 
 // import Message from '../components/message';
 // import messageData from '../data/messages';
@@ -38,5 +40,13 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(MessageList);
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { fetchMessages: fetchMessages},
+    dispatch
+  );
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
 // export default MessageList;
