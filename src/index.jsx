@@ -22,7 +22,6 @@ const reducers = combineReducers({
   selectedChannel: SelectedChannelReducer
 });
 
-
 const initialState = {
   messages: [
     {
@@ -49,4 +48,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
 

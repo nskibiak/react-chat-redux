@@ -1,16 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 // import Message from '../components/message';
-import messageData from '../data/messages';
+// import messageData from '../data/messages';
 import Message from '../components/message';
 
-const MessageList = () => {
-  const messages = messageData;
+const MessageList = (props) => {
+
+  // const messages = messageData;
 
   return (
     <div className="MessageList">
       <div className="ChannelTitle">Channel</div>
       <div className="Messages">
-        {messages.map((message) => <Message key={message.created_at} message={message}/>)}
+        {props.messages.map((message) => <Message key={message.created_at} message={message}/>)}
       </div>
       <div className="MessageForm">
         <form className="form-inline">
@@ -25,4 +28,11 @@ const MessageList = () => {
   );
 };
 
-export default MessageList;
+function mapStateToProps(state) {
+  return {
+    messages: state.messages
+  }
+}
+
+export default connect(mapStateToProps)(MessageList);
+// export default MessageList;
