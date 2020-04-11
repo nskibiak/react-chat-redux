@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 
 // import Message from '../components/message';
 // import messageData from '../data/messages';
+
 import Message from '../components/message';
 
 class MessageList extends Component {
-
   render() {
     return (
       <div className="MessageList">
         <div className="ChannelTitle">Channel</div>
         <div className="Messages">
-          {this.props.messages.map((message) => <Message key={message.created_at} message={message}/>)}
+          {props.messages.map((message) => <Message key={message.created_at} message={message}/>)}
         </div>
         <div className="MessageForm">
           <form className="form-inline">
@@ -24,8 +24,8 @@ class MessageList extends Component {
         </div>
       </div>
     );
-  }
-}
+  };
+};
 
 function mapStateToProps(state) {
   return {
@@ -34,4 +34,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(MessageList);
-// export default MessageList;
