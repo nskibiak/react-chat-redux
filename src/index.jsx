@@ -8,14 +8,16 @@ import { createStore, combineReducers } from 'redux';
 
 import MessagesReducer from './reducers/messages_reducer';
 import ChannelsReducer from './reducers/channels_reducer';
+import CurrentUserReducer from './reducers/current_user_reducer';
+import SelectedChannelReducer from './reducers/selected_channel_reducer';
 
 import App from './containers/App';
 
 const reducers = combineReducers({
   messages: MessagesReducer,
   channels: ChannelsReducer,
-  currentUser: prompt("Please enter a username") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
-  selectedChannel: 'general'
+  currentUser: CurrentUserReducer,
+  selectedChannel: SelectedChannelReducer
 });
 
 ReactDOM.render(
