@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 
+// var colors = ['red', 'green', 'blue']
+
+// var randomColor = colors[Math.floor(Math.random()*colors.length)]
+
+// var sectionStyle = {
+//   color: randomColor
+// };
+
 class App extends Component {
 
   render() {
