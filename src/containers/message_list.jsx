@@ -7,6 +7,10 @@ import Message from '../components/message';
 
 class MessageList extends Component {
 
+  componentWillMount() {
+    this.props.fetchMessages(this.props.channel);
+  }
+
   render() {
     return (
       <div className="MessageList">
@@ -29,7 +33,8 @@ class MessageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages
+    messages: state.messages,
+    channel: state.channel
   }
 }
 
