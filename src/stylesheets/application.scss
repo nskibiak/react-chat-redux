@@ -63,6 +63,32 @@ code {
 
 .Messages {
   height: 100%;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+
+.Message {
+  height: 100px;
+}
+
+.topLine {
+  display: flex;
+  align-items: flex-end;
+}
+
+.userName {
+  color: blue;
+  font-weight: bold;
+}
+
+.timeStamp {
+  font-size: .8em;
+  color: #929292;
+}
+
+.messageContent {
+  margin-top: 5px;
+  color: #333333;
 }
 
 .MessageForm {
