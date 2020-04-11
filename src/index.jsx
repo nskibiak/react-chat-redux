@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
+import reduxPromise from 'redux-promise';
 
 import MessagesReducer from './reducers/messages_reducer';
 import ChannelsReducer from './reducers/channels_reducer';
@@ -21,7 +22,7 @@ const reducers = combineReducers({
   selectedChannel: SelectedChannelReducer
 });
 
-const middlewares = applyMiddleware(logger);
+const middlewares = applyMiddleware(reduxPromise, logger);
 
 ReactDOM.render(
   <Provider store={createStore(reducers, {}, middlewares)}>
