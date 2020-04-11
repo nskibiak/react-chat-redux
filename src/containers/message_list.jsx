@@ -1,40 +1,26 @@
 import React from 'react';
+// import Message from '../components/message';
+import messageData from '../data/messages';
 import Message from '../components/message';
-// import { bindActionCreators } from 'redux';
-// import { connect } from 'react-redux';
-// import { setFlats } from '../actions'
 
-
-class FlatList extends Component {
-
-  componentWillMount() {
-   // TODO: dispatch an action to load flats!
-   this.props.setFlats();
-  }
-
-  render() {
-    return (
-      <div className="flat-list">
-        {this.props.flats.map((flat) => {
-          return <Flat key={flat.name} flat={flat} />;
-        })}
+const MessageList = () => {
+  const messages = messageData;
+  return (
+    <div className="MessageList">
+      <div className="ChannelTitle">Channel</div>
+      <div className="Messages">
+        {messages.map((message) => <Message message={message}/>)}
       </div>
-    );
-  }
-}
+      <div className="MessageForm">
+        <form className="form-inline">
+          <div className="form-group">
+            <input type="message" className="form-control" id="inputMessage"></input>
+            <button type="submit" className="btn btn-danger" id="messageButton">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
-function mapReduxStateToProps(state) {
-  return {
-    flats: state.flats
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { setFlats: setFlats},
-    dispatch
   );
-}
-
-export default connect(mapReduxStateToProps, mapDispatchToProps)(FlatList);
-
+};
+export default MessageList;
