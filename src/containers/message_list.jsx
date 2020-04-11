@@ -5,6 +5,7 @@ import Message from '../components/message';
 
 const MessageList = () => {
   const messages = messageData;
+
   return (
     <div className="MessageList">
       <div className="ChannelTitle">Channel</div>
@@ -23,4 +24,5 @@ const MessageList = () => {
 
   );
 };
+
 export default MessageList;

@@ -12,3 +12,10 @@ const CurrentUserReducer = (state, action) => {
 }
 
 export default CurrentUserReducer;
+
+// export default function(state = null, action) {
+//   switch (action.type) {
+//     default:
+//       return state;
+//   }
+// }

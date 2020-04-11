@@ -12,3 +12,10 @@ const SelectedChannelReducer = (state, action) => {
 }
 
 export default SelectedChannelReducer;
+
+// export default function(state = null, action) {
+//   switch (action.type) {
+//     default:
+//       return state;
+//   }
+// }
