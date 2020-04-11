@@ -9,7 +9,7 @@ const MessageList = () => {
     <div className="MessageList">
       <div className="ChannelTitle">Channel</div>
       <div className="Messages">
-        {messages.map((message) => <Message message={message}/>)}
+        {messages.map((message) => <Message key={message.created_at} message={message}/>)}
       </div>
       <div className="MessageForm">
         <form className="form-inline">
