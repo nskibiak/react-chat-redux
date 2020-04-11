@@ -11,10 +11,10 @@ function App() {
         <div className="ChannelTitle">Channel</div>
         <div className="Messages"></div>
         <div className="MessageForm">
-          <form class="form-inline">
-            <div class="form-group">
-              <input type="message" class="form-control" id="inputMessage"></input>
-              <button type="submit" class="btn btn-danger" id="messageButton">Send</button>
+          <form className="form-inline">
+            <div className="form-group">
+              <input type="message" className="form-control" id="inputMessage"></input>
+              <button type="submit" className="btn btn-danger" id="messageButton">Send</button>
             </div>
           </form>
         </div>
