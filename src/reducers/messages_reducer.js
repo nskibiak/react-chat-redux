@@ -1,21 +1,26 @@
-// const MessagesReducer = (state, action) => {
-//   if (state === undefined) {
-//     return [];
-//   }
+import { FETCH_MESSAGES } from '../actions'
 
-//   if (action.type === 'LIST_MESSAGES') {
-//     return action.payload;
-//   } else {
-//     return state;
-//   }
-
-// }
-
-// export default MessagesReducer;
-
-export default function(state = null, action) {
-  switch (action.type) {
-    default:
-      return state;
+const messagesReducer = (state, action) => {
+  if (state === undefined) {
+    return [];
   }
+
+  if (action.type === FETCH_MESSAGES ) {
+    return action.payload;
+  } else {
+    return state;
+  }
+
 }
+
+export default messagesReducer;
+
+
+// export default function(state = null, action) {
+//   switch (action.type) {
+//     case FETCH_MESSAGES:
+//       return action.payload;
+//     default:
+//       return state;
+//   }
+// }
