@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
 
@@ -40,7 +40,8 @@ const initialState = {
   selectedChannel: 'general'
 };
 
-const middlewares = applyMiddleware(reduxPromise, logger);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const middlewares = composeEnhancers(applyMiddleware(reduxPromise, logger));
 
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middlewares)}>
