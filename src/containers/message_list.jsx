@@ -9,7 +9,7 @@ import Message from '../components/message';
 
 class MessageList extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchMessages('general');
   }
 
