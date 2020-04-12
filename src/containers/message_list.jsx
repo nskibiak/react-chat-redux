@@ -6,6 +6,7 @@ import { fetchMessages } from '../actions'
 // import Message from '../components/message';
 // import messageData from '../data/messages';
 import Message from '../components/message';
+import MessageForm from './message_form';
 
 class MessageList extends Component {
 
@@ -20,14 +21,7 @@ class MessageList extends Component {
         <div className="Messages">
           {console.log(this.props.messages)}
         </div>
-        <div className="MessageForm">
-          <form className="form-inline">
-            <div className="form-group">
-              <input type="message" className="form-control" id="inputMessage"></input>
-              <button type="submit" className="btn btn-danger" id="messageButton">Send</button>
-            </div>
-          </form>
-        </div>
+        <MessageForm />
       </div>
     );
   }
