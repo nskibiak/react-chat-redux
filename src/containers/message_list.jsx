@@ -10,7 +10,7 @@ import Message from '../components/message';
 class MessageList extends Component {
 
   componentWillMount() {
-    this.props.fetchMessages(this.props.channel);
+    this.props.fetchMessages('general');
   }
 
   render() {
@@ -18,7 +18,7 @@ class MessageList extends Component {
       <div className="MessageList">
         <div className="ChannelTitle">Channel</div>
         <div className="Messages">
-          {this.props.messages.map((message) => <Message key={message.created_at} message={message}/>)}
+          {console.log(this.props.messages)}
         </div>
         <div className="MessageForm">
           <form className="form-inline">
@@ -49,3 +49,7 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
 // export default MessageList;
+
+          // {this.props.messages.map((message) => {
+          //   return <Message key={message.created_at} message={message} />;
+          // })}
