@@ -18,6 +18,7 @@ class MessageForm extends Component {
   }
 
   handleSubmit(event) {
+    // console.log('so far so good');
     // this.props.createMessage('general', 'author', 'content')
     this.props.createMessage('general', this.props.author, this.state.value)
     alert('A name was submitted: ' + this.state.value);
