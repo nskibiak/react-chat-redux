@@ -17,7 +17,9 @@ class MessageList extends Component {
       <div className="MessageList">
         <div className="ChannelTitle">Channel</div>
         <div className="Messages">
-
+          {this.props.messages.map((message) => {
+            return <Message key={message.created_at} message={message} />;
+          })}
         </div>
         <MessageForm />
       </div>
@@ -27,7 +29,7 @@ class MessageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages.messages,
+    messages: state.messages,
     channel: state.selectedChannel
   }
 }
@@ -41,6 +43,4 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
 
-// {this.props.messages.map((message) => {
-//   return <Message key={message.created_at} message={message} />;
-// })}
+

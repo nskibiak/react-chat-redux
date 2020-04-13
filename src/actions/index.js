@@ -2,7 +2,8 @@ export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 
 export function fetchMessages(channel) {
   const promise = fetch(`https://wagon-chat.herokuapp.com/${channel}/messages`)
-    .then(response => response.json());
+    .then(response => response.json())
+    .then(data => data['messages']);
 
   return {
     type: FETCH_MESSAGES,
@@ -16,12 +17,14 @@ export function createMessage(channel, author, content) {
   const body = { author, content };
   const promise = fetch(`https://wagon-chat.herokuapp.com/${channel}/messages`, {
     method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
+    // headers: {
+    //   'Accept': 'application/json',
+    //   'Content-Type': 'application/json'
+    // },
     body: JSON.stringify(body)
-  }).then(r => r.json());
+  })
+    .then(response => response.json())
+    .then(data => data['messages']);
 
   return {
     type: CREATE_MESSAGE,
