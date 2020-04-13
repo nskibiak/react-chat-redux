@@ -17,10 +17,6 @@ export function createMessage(channel, author, content) {
   const body = { author, content };
   const promise = fetch(`https://wagon-chat.herokuapp.com/${channel}/messages`, {
     method: 'POST',
-    // headers: {
-    //   'Accept': 'application/json',
-    //   'Content-Type': 'application/json'
-    // },
     body: JSON.stringify(body)
   })
     .then(response => response.json())
