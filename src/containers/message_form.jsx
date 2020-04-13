@@ -18,8 +18,8 @@ class MessageForm extends Component {
   }
 
   handleSubmit(event) {
-    this.props.createMessage(this.props.channel, this.props.author, this.state.value)
     event.preventDefault();
+    this.props.createMessage(this.props.channel, this.props.author, this.state.value)
     this.setState({value: ' '});
   }
 
@@ -46,7 +46,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { createMessage: createMessage},
+    { createMessage: createMessage },
     dispatch
   );
 }
