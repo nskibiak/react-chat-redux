@@ -9,3 +9,8 @@ export function fetchMessages(channel) {
     payload: promise
   };
 }
+
+export function createMessage(channel, author, content) {
+  // TODO
+}
+
