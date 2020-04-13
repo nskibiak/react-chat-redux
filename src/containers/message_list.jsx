@@ -3,15 +3,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchMessages } from '../actions'
 
-// import Message from '../components/message';
-// import messageData from '../data/messages';
 import Message from '../components/message';
 import MessageForm from './message_form';
 
 class MessageList extends Component {
 
   componentDidMount() {
-    this.props.fetchMessages('general');
+    this.props.fetchMessages(this.props.channel);
   }
 
   render() {
@@ -19,7 +17,7 @@ class MessageList extends Component {
       <div className="MessageList">
         <div className="ChannelTitle">Channel</div>
         <div className="Messages">
-          {console.log(this.props.messages)}
+
         </div>
         <MessageForm />
       </div>
@@ -29,8 +27,8 @@ class MessageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages,
-    channel: state.channel
+    messages: state.messages.messages,
+    channel: state.selectedChannel
   }
 }
 
@@ -42,8 +40,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
-// export default MessageList;
 
-          // {this.props.messages.map((message) => {
-          //   return <Message key={message.created_at} message={message} />;
-          // })}
+// {this.props.messages.map((message) => {
+//   return <Message key={message.created_at} message={message} />;
+// })}

@@ -18,7 +18,7 @@ class MessageForm extends Component {
   }
 
   handleSubmit(event) {
-    this.props.createMessage('general', this.props.author, this.state.value)
+    this.props.createMessage(this.props.channel, this.props.author, this.state.value)
     event.preventDefault();
   }
 
@@ -39,7 +39,7 @@ class MessageForm extends Component {
 function mapStateToProps(state) {
   return {
     author: state.currentUser,
-    channel: state.channel
+    channel: state.selectedChannel
   }
 }
 
