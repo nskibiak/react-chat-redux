@@ -9,6 +9,9 @@ import MessageForm from './message_form';
 class MessageList extends Component {
 
   UNSAFE_componentWillMount() {
+  }
+
+  fetchMessages = () => {
     this.props.fetchMessages(this.props.channel);
   }
 
