@@ -47,6 +47,6 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default connect(mapStateToProps, null)(ChannelList);
+export default connect(mapStateToProps, mapDispatchToProps)(ChannelList);
 
 
