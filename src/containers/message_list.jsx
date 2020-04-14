@@ -16,7 +16,7 @@ class MessageList extends Component {
   }
 
   componentDidUpdate() {
-    // this.list.scrollTop = this.list.scrollHeight;
+    this.list.scrollTop = this.list.scrollHeight;
   }
 
   componentWillUnmount() {
