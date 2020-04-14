@@ -42,6 +42,17 @@ code {
   font-size: 1.5em;
 }
 
+.ChannelMenu {
+  margin-top: 50px;
+}
+
+.Channel {
+  color: #8D8785;
+  margin-bottom: 18px;
+}.selected{
+  color: black;
+}
+
 .MessageList {
   height: 100vh;
   width: 70vw;

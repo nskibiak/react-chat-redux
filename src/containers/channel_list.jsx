@@ -11,11 +11,13 @@ class ChannelList extends Component {
   render() {
     return (
       <div className="ChannelList">Redux Chat
+        <div className="ChannelMenu">
         {
-          this.props.channels.map((channel) => {
-            return <div onClick={this.handleClick}>{channel}</div>;
+          this.props.channels.map((channel, index) => {
+            return <div className={(channel === this.props.selectedChannel) ? "Channel selected" : "Channel"} onClick={this.handleClick} key={index}>#{channel}</div>;
           })
         }
+        </div>
       </div>
     );
   }
@@ -23,7 +25,8 @@ class ChannelList extends Component {
 
 function mapStateToProps(state) {
   return {
-    channels: state.channels
+    channels: state.channels,
+    selectedChannel: state.selectedChannel
   }
 }
 
