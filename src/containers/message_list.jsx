@@ -8,7 +8,19 @@ import MessageForm from './message_form';
 
 class MessageList extends Component {
 
-  UNSAFE_componentWillMount() {
+  // UNSAFE_componentWillMount() {
+  // }
+
+  componentDidMount() {
+    this.refresher = setInterval(this.fetchMessages, 5000);
+  }
+
+  componentDidUpdate() {
+    // this.list.scrollTop = this.list.scrollHeight;
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refresher);
   }
 
   fetchMessages = () => {
@@ -19,7 +31,7 @@ class MessageList extends Component {
     return (
       <div className="MessageList">
         <div className="ChannelTitle">Channel #{this.props.channel}</div>
-        <div className="Messages">
+        <div className="Messages" ref={(list) => { this.list = list; }}>
           {
             this.props.messages.map((message) => {
               return <Message key={message.id} message={message} />;
