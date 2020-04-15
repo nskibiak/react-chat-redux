@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {emojify} from 'react-emojione';
 
 class App extends Component {
 
