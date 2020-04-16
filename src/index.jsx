@@ -8,7 +8,8 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import { createHistory as history } from 'history';
+// import { createHistory } from 'history';
+import { createBrowserHistory } from 'history';
 
 import MessagesReducer from './reducers/messages_reducer';
 // import ChannelsReducer from './reducers/channels_reducer';
@@ -16,6 +17,8 @@ import MessagesReducer from './reducers/messages_reducer';
 import SelectedChannelReducer from './reducers/selected_channel_reducer';
 
 import App from './containers/App';
+
+const history = createBrowserHistory();
 
 const identityReducer = (state = null) => state;
 
