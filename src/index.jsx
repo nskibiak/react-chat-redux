@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { Router, Route, Redirect, Switch } from 'react-router-dom';
 // import { createHistory } from 'history';
 import { createBrowserHistory } from 'history';
 
@@ -45,7 +45,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/:channel" component={App} />
         <Redirect from="/" to="/general" />
-        </Switch>
+      </Switch>
     </Router>
   </Provider>,
   document.getElementById('root')
