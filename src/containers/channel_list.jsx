@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { changeChannel } from '../actions'
 
@@ -19,10 +20,12 @@ class ChannelList extends Component {
             return (
             <div
               className={(channel === this.props.channelFromParams) ? "Channel selected" : "Channel"}
-              onClick={() => this.handleClick(channel)}
+              // onClick={() => this.handleClick(channel)
               key={index}
             >
-              #{channel}
+              <Link to={`/${channel}`}>
+                #{channel}
+              </Link>
             </div>
             );
           })
