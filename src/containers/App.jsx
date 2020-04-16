@@ -2,8 +2,8 @@ import React from 'react';
 import MessageList from './message_list';
 import ChannelList from './channel_list';
 
-function App() {
-  return (
+const App = (props) => {
+  return(
     <div className="App">
       <div className="LogoHolder">
         <img src="/lewagon-logo.png" alt="" id="logo"/>
@@ -12,6 +12,6 @@ function App() {
       <MessageList />
     </div>
   );
-}
+};
 
 export default App;
