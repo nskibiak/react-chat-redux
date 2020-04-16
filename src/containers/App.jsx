@@ -8,8 +8,8 @@ const App = (props) => {
       <div className="LogoHolder">
         <img src="/lewagon-logo.png" alt="" id="logo"/>
       </div>
-      <ChannelList />
-      <MessageList />
+      <ChannelList channelFromParams={props.match.params.channel} />
+      <MessageList channelFromParams={props.match.params.channel} />
     </div>
   );
 };
