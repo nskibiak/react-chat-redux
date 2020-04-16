@@ -18,7 +18,7 @@ class ChannelList extends Component {
           this.props.channels.map((channel, index) => {
             return (
             <div
-              className={(channel === this.props.selectedChannel) ? "Channel selected" : "Channel"}
+              className={(channel === this.props.channelFromParams) ? "Channel selected" : "Channel"}
               onClick={() => this.handleClick(channel)}
               key={index}
             >
@@ -35,8 +35,7 @@ class ChannelList extends Component {
 
 function mapStateToProps(state) {
   return {
-    channels: state.channels,
-    selectedChannel: state.selectedChannel
+    channels: state.channels
   }
 }
 

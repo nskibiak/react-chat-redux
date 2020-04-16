@@ -24,13 +24,13 @@ class MessageList extends Component {
   }
 
   fetchMessages = () => {
-    this.props.fetchMessages(this.props.channel);
+    this.props.fetchMessages(this.props.channelFromParams);
   }
 
   render() {
     return (
       <div className="MessageList">
-        <div className="ChannelTitle">Channel #{this.props.channel}</div>
+        <div className="ChannelTitle">Channel #{this.props.channelFromParams}</div>
         <div className="Messages" ref={(list) => { this.list = list; }}>
           {
             this.props.messages.map((message) => {
@@ -46,8 +46,7 @@ class MessageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages,
-    channel: state.selectedChannel
+    messages: state.messages
   }
 }
 
